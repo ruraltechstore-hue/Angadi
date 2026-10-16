@@ -1,34 +1,96 @@
 import { Link } from "@tanstack/react-router";
-
-const groups = [
-  { title: "Shop", links: [["/products", "All products"], ["/categories", "Categories"], ["/wishlist", "Wishlist"], ["/track", "Track order"]] },
-  { title: "Company", links: [["/about", "About us"], ["/contact", "Contact"], ["/faq", "FAQ"]] },
-  { title: "Policies", links: [["/terms", "Terms & conditions"], ["/privacy", "Privacy policy"], ["/shipping-policy", "Shipping policy"], ["/returns", "Returns & refunds"]] },
-] as const;
+import { Star, Zap, ShieldCheck, Rocket } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="mt-20 bg-primary-deep text-primary-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-4">
-        <div>
-          <p className="font-display text-3xl tracking-[0.3em]">ANGADI</p>
-          <div className="gold-rule my-3 w-40" />
-          <p className="text-sm opacity-75">Rural tech store</p>
-        </div>
-        {groups.map((g) => (
-          <div key={g.title}>
-            <p className="mb-3 text-sm font-semibold text-gold">{g.title}</p>
-            <ul className="space-y-2 text-sm opacity-80">
-              {g.links.map(([to, label]) => (
-                <li key={to}><Link to={to} className="hover:opacity-100 hover:underline">{label}</Link></li>
-              ))}
-            </ul>
+    <>
+      {/* 4 Pillars Feature Banner */}
+      <footer className="feat">
+        <div className="wrap">
+          <div>
+            <Star className="ic text-gold shrink-0" />
+            <div>
+              <b className="font-semibold text-white">Quality Products</b>
+              <span className="block text-xs text-neutral-300">Carefully selected for you</span>
+            </div>
           </div>
-        ))}
-      </div>
-      <div className="border-t border-primary-foreground/10 py-5 text-center text-xs opacity-60">
-        © {new Date().getFullYear()} Angadi. All rights reserved.
-      </div>
-    </footer>
+          <div>
+            <Zap className="ic text-gold shrink-0" />
+            <div>
+              <b className="font-semibold text-white">Fast &amp; Reliable Delivery</b>
+              <span className="block text-xs text-neutral-300">Get your orders on time</span>
+            </div>
+          </div>
+          <div>
+            <ShieldCheck className="ic text-gold shrink-0" />
+            <div>
+              <b className="font-semibold text-white">Secure Shopping</b>
+              <span className="block text-xs text-neutral-300">Your data, our priority</span>
+            </div>
+          </div>
+          <div>
+            <Rocket className="ic text-gold shrink-0" />
+            <div>
+              <b className="font-semibold text-white">Angadi</b>
+              <span className="block text-xs text-neutral-300">Shop today, grow tomorrow</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* Main Footer */}
+      <footer className="foot">
+        <div className="wrap">
+          {/* Brand info */}
+          <div>
+            <img
+              src="/angadi_assets/img_2.png"
+              alt="Angadi – India's online marketplace"
+              className="h-16 w-auto object-contain"
+            />
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              Angadi is an online marketplace built to make good products easy to find. Quality items, reliable delivery, and support whenever you need it.
+            </p>
+          </div>
+
+          {/* Shop Column */}
+          <div>
+            <b className="mb-2 block font-semibold text-navy dark:text-white">Shop</b>
+            <Link to="/products" search={{ sort: "new" }}>New Arrivals</Link>
+            <Link to="/products" search={{ sort: "rating" }}>Best Sellers</Link>
+            <Link to="/products" search={{ sort: "discount" }}>Deals &amp; Offers</Link>
+            <Link to="/categories">All Categories</Link>
+            <Link to="/products">Browse All Products</Link>
+          </div>
+
+          {/* Company Column */}
+          <div>
+            <b className="mb-2 block font-semibold text-navy dark:text-white">Company</b>
+            <Link to="/about">About Us</Link>
+            <Link to="/contact">Contact Support</Link>
+            <Link to="/account">My Account</Link>
+            <Link to="/cart">Shopping Cart</Link>
+            <Link to="/track">Track Order</Link>
+          </div>
+
+          {/* Legal / Policy Column */}
+          <div>
+            <b className="mb-2 block font-semibold text-navy dark:text-white">Policies &amp; Legal</b>
+            <Link to="/terms">Terms &amp; Conditions</Link>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/shipping-policy">Shipping Policy</Link>
+            <Link to="/returns">Returns &amp; Refunds</Link>
+            <Link to="/faq">Frequently Asked Questions</Link>
+          </div>
+        </div>
+
+        <div className="copy">
+          <div className="wrap flex flex-col items-center justify-between gap-2 sm:flex-row">
+            <span>© {new Date().getFullYear()} Angadi. All rights reserved.</span>
+            <span className="text-xs text-muted-foreground">Shop · Grow · Succeed</span>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }

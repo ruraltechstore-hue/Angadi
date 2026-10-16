@@ -32,11 +32,24 @@ function Admin() {
   if (loading) return <p className="py-24 text-center text-muted-foreground">Loading…</p>;
   if (!isAdmin) return <p className="py-24 text-center">You don't have access to the admin panel. <Link to="/" className="text-primary underline">Go home</Link></p>;
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10">
-      <h1 className="text-4xl font-semibold text-primary-deep">Admin panel</h1>
-      <div className="mt-6 flex gap-2 border-b">
+    <div className="wrap py-6">
+      <div className="crumbs">
+        <Link to="/">Home</Link>
+        <span>/</span>
+        <span className="text-foreground">Admin Panel</span>
+      </div>
+      <div className="mt-2 flex items-center justify-between border-b border-line pb-4">
+        <div>
+          <h1 className="text-3xl font-bold text-navy dark:text-white">Admin Dashboard</h1>
+          <p className="text-xs text-muted-foreground">Manage Angadi categories, catalog products, and customer orders</p>
+        </div>
+        <Link to="/" className="btn ghost sm">
+          View Storefront
+        </Link>
+      </div>
+      <div className="mt-6 flex gap-3 border-b border-line">
         {([["dash", "Dashboard"], ["cats", "Categories"], ["products", "Products"], ["orders", "Orders"]] as const).map(([k, l]) => (
-          <button key={k} onClick={() => setTab(k)} className={`border-b-2 px-4 py-2 text-sm font-semibold ${tab === k ? "border-primary text-primary" : "border-transparent text-muted-foreground"}`}>{l}</button>
+          <button key={k} onClick={() => setTab(k)} className={`border-b-2 px-4 py-2.5 text-sm font-semibold transition cursor-pointer ${tab === k ? "border-gold text-navy dark:text-gold" : "border-transparent text-muted-foreground hover:text-foreground"}`}>{l}</button>
         ))}
       </div>
       <div className="mt-6">
