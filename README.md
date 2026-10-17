@@ -1,24 +1,37 @@
-# Pixel Perfect Replica
+# Angadi
 
-Implement exactly the screenshot and nothing else
+**Shop · Grow · Succeed** — A new era of Indian enterprise, uniting businesses, entrepreneurs, and customers in a journey of growth, trust, and opportunity.
 
-This project was built with [Lovable](https://lovable.dev).
+Angadi is a modern, responsive e-commerce web platform offering curated quality products, reliable fast delivery across India and worldwide, secure shopping, and real-time order tracking.
 
-## Build with Lovable
+## Core Features
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/03eaa154-a2bd-4473-b658-b9903d7ddb6b).
+- **Storefront & Catalog**: Category browsing, live product search, brand filters, sorting (pricing, ratings, discounts, new arrivals), and responsive product displays.
+- **Cart & Wishlist**: Client-side cart and persistent wishlist with smooth micro-interactions.
+- **Order Management & Tracking**: Real-time order tracking by order reference ID, address collection, and transparent order lifecycle statuses.
+- **Customer Accounts**: Secure customer authentication, order history, and account profile view.
+- **Admin Dashboard**: Dedicated management interface for products, categories, inventory, and order fulfillment.
+- **Polished Experience**: Monochromatic Sunshine brand palette, responsive design for all screen sizes, and accessible UI.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Getting Started
 
-## Development
+### Prerequisites
+- Node.js (v18+)
+- npm or bun
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### Local Development
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+The application will start locally at `http://localhost:8080`.
+
+## Scripts
+
+- `npm run dev`: Start local development server
+- `npm run build`: Build production bundle
+- `npm run lint`: Run ESLint checks
+- `npm run test`: Run tests with Vitest
+
