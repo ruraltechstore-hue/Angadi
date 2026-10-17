@@ -139,7 +139,7 @@ export function Header() {
 
               <Link
                 to={user ? "/account" : "/auth"}
-                className="flex items-center gap-1.5 text-foreground hover:text-navy"
+                className="flex items-center gap-1.5 text-foreground hover:text-gold"
               >
                 <User className="h-4 w-4 text-muted-foreground" />
                 <span className="hidden sm:inline">{user ? "My Account" : "Login / Signup"}</span>
@@ -147,7 +147,7 @@ export function Header() {
 
               <Link
                 to="/wishlist"
-                className="relative flex items-center gap-1 text-foreground hover:text-navy"
+                className="relative flex items-center gap-1 text-foreground hover:text-gold"
                 aria-label="Wishlist"
               >
                 <Heart className={`h-4 w-4 ${wishlist.length > 0 ? "fill-destructive text-destructive" : "text-muted-foreground"}`} />
@@ -161,7 +161,7 @@ export function Header() {
 
               <Link
                 to="/cart"
-                className="cartlink flex items-center gap-1 font-semibold text-foreground hover:text-navy"
+                className="cartlink flex items-center gap-1 font-semibold text-foreground hover:text-gold"
                 aria-label="Cart"
               >
                 <ShoppingBag className="h-4 w-4 text-muted-foreground" />

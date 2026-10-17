@@ -267,12 +267,27 @@ nav.menu a {
   transition: all 0.15s ease;
 }
 nav.menu a:hover {
-  color: var(--navy);
+  color: var(--foreground);
 }
 nav.menu a.on {
   border-color: var(--gold);
   color: var(--navy);
   font-weight: 600;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) nav.menu a {
+    color: var(--muted);
+  }
+  :root:not([data-theme="light"]) nav.menu a:hover,
+  :root:not([data-theme="light"]) nav.menu a.on {
+    color: #ffffff !important;
+  }
+}
+:root[data-theme="dark"] nav.menu a.on,
+:root[data-theme="dark"] nav.menu a:hover,
+.dark nav.menu a.on,
+.dark nav.menu a:hover {
+  color: #ffffff !important;
 }
 
 /* Circular Categories */
@@ -596,9 +611,16 @@ nav.menu a.on {
 
 /* Footers */
 footer.feat {
-  background: var(--navy);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--text);
   font-size: 13px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+:root[data-theme="dark"] footer.feat,
+.dark footer.feat {
+  background: var(--card);
+  color: var(--text);
 }
 footer.feat .wrap {
   display: grid;

@@ -5,34 +5,34 @@ export function Footer() {
   return (
     <>
       {/* 4 Pillars Feature Banner */}
-      <footer className="feat">
+      <footer className="feat border-y border-line/70 bg-white py-5 dark:bg-card">
         <div className="wrap">
           <div>
             <Star className="ic text-gold shrink-0" />
             <div>
-              <b className="font-semibold text-white">Quality Products</b>
-              <span className="block text-xs text-neutral-300">Carefully selected for you</span>
+              <b className="font-semibold text-navy dark:text-white">Quality Products</b>
+              <span className="block text-xs text-muted-foreground">Carefully selected for you</span>
             </div>
           </div>
           <div>
             <Zap className="ic text-gold shrink-0" />
             <div>
-              <b className="font-semibold text-white">Fast &amp; Reliable Delivery</b>
-              <span className="block text-xs text-neutral-300">Get your orders on time</span>
+              <b className="font-semibold text-navy dark:text-white">Fast &amp; Reliable Delivery</b>
+              <span className="block text-xs text-muted-foreground">Get your orders on time</span>
             </div>
           </div>
           <div>
             <ShieldCheck className="ic text-gold shrink-0" />
             <div>
-              <b className="font-semibold text-white">Secure Shopping</b>
-              <span className="block text-xs text-neutral-300">Your data, our priority</span>
+              <b className="font-semibold text-navy dark:text-white">Secure Shopping</b>
+              <span className="block text-xs text-muted-foreground">Your data, our priority</span>
             </div>
           </div>
           <div>
             <Rocket className="ic text-gold shrink-0" />
             <div>
-              <b className="font-semibold text-white">Angadi</b>
-              <span className="block text-xs text-neutral-300">Shop today, grow tomorrow</span>
+              <b className="font-semibold text-navy dark:text-white">Angadi</b>
+              <span className="block text-xs text-muted-foreground">Shop today, grow tomorrow</span>
             </div>
           </div>
         </div>

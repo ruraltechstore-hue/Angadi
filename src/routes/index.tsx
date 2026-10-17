@@ -41,6 +41,7 @@ function Home() {
     setCur((n + SCENES.length) % SCENES.length);
   };
 
+  const featured = products.filter((p) => p.is_featured);
   const trending = products.filter((p) => p.is_trending);
   const bestSellers = products.filter((p) => p.is_bestseller);
   const newArrivals = products.filter((p) => p.is_new);
@@ -50,6 +51,7 @@ function Home() {
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   // Fallbacks if tags are not yet assigned in DB
+  const displayFeatured = featured.length > 0 ? featured : products.slice(0, 6);
   const displayTrending = trending.length > 0 ? trending : products.slice(0, 6);
   const displayDeals = deals.length > 0 ? deals : products.slice(0, 6);
   const displayBestSellers = bestSellers.length > 0 ? bestSellers : products.slice(0, 6);
@@ -209,6 +211,28 @@ function Home() {
           )}
         </div>
       </div>
+
+      {/* Featured Products Section (White Color Background) */}
+      {products.length > 0 && (
+        <section className="border-y border-line/60 bg-white py-10 dark:bg-card">
+          <div className="wrap">
+            <div className="hd">
+              <div>
+                <h2 className="text-2xl font-bold text-navy dark:text-white">Featured Products</h2>
+                <p className="mt-0.5 text-xs text-muted-foreground">Handpicked selections verified for quality, authentic Indian origin and trust</p>
+              </div>
+              <Link to="/products" className="flex items-center gap-1 font-semibold text-sm text-navy hover:text-gold dark:text-gold">
+                View All <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="grid-angadi">
+              {displayFeatured.slice(0, 6).map((p) => (
+                <ProductCard key={p.id} p={p} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 3. Section: Trending Products */}
       {products.length > 0 && (

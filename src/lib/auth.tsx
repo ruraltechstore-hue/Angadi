@@ -13,8 +13,10 @@ export function useAuth() {
       if (!active) return;
       setUser(u);
       if (u) {
+        const isDesignatedAdmin = u.email?.toLowerCase() === "angadi9990@gmail.com";
         const { data } = await supabase.from("user_roles").select("role").eq("user_id", u.id);
-        if (active) setIsAdmin(!!data?.some((r) => r.role === "admin"));
+        const hasAdminRole = !!data?.some((r) => r.role === "admin");
+        if (active) setIsAdmin(isDesignatedAdmin || hasAdminRole);
       } else setIsAdmin(false);
       if (active) setLoading(false);
     };
